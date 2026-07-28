@@ -91,29 +91,29 @@ p {
 </head>
 <body>
 
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="https://qijunhao.com" class="nav-logo">QI JUNHAO<span class="dot">.</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="https://qijunhao.com" data-i18n="nav.home">首页</a></li>
-      <li><a href="https://music.qijunhao.com" data-i18n="nav.music">音乐</a></li>
-      <li><a href="https://travel.qijunhao.com" data-i18n="nav.travel">旅行</a></li>
-      <li><a href="https://photography.qijunhao.com" data-i18n="nav.photo">摄影</a></li>
-      <li><a href="https://sport.qijunhao.com" class="active" data-i18n="nav.sports">运动</a></li>
-      <li><a href="https://resume.qijunhao.com" data-i18n="nav.resume">履历</a></li>
-      <li><a href="https://contact.qijunhao.com" data-i18n="nav.contact">联系</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="lang-toggle" id="langToggle">
-        <span class="lang-item active" data-lang="zh">简</span>
-        <span class="lang-item" data-lang="en">EN</span>
-        <span class="lang-item" data-lang="hant">繁</span>
-      </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="切换主题"></button>
-      <button class="nav-toggle" id="navToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+<!-- SVG filter for gooey effect -->
+<svg class="gooey-filter-svg" aria-hidden="true">
+  <defs>
+    <filter id="gooeyFilter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9" result="gooey" />
+      <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
+    </filter>
+  </defs>
+</svg>
+
+<div class="nav-gooey-wrapper">
+  <a href="https://qijunhao.com" class="nav-gooey-logo">QI JUNHAO<span class="dot">.</span></a>
+  <div class="gooey-nav-container" id="gooeyNav"></div>
+  <div class="nav-gooey-right">
+    <div class="lang-toggle" id="langToggle">
+      <span class="lang-item active" data-lang="zh">简</span>
+      <span class="lang-item" data-lang="en">EN</span>
+      <span class="lang-item" data-lang="hant">繁</span>
     </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题"></button>
   </div>
-</nav>
+</div>
 
 <div class="container">
   <span class="icon">⚽</span>
@@ -124,5 +124,24 @@ p {
 </div>
 
 <script src="common.js"></script>
+<script src="gooey-nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var gooeyItems = [
+    { href: 'https://qijunhao.com', key: 'nav.home', label: '首页' },
+    { href: 'https://music.qijunhao.com', key: 'nav.music', label: '音乐' },
+    { href: 'https://travel.qijunhao.com', key: 'nav.travel', label: '旅行' },
+    { href: 'https://photography.qijunhao.com', key: 'nav.photo', label: '摄影' },
+    { href: 'https://sport.qijunhao.com', key: 'nav.sports', label: '运动' },
+    { href: 'https://resume.qijunhao.com', key: 'nav.resume', label: '履历' },
+    { href: 'https://contact.qijunhao.com', key: 'nav.contact', label: '联系' },
+  ];
+  window.gooeyNavItems = gooeyItems;
+  window.gooeyNavInstance = GooeyNav(document.getElementById('gooeyNav'), {
+    items: gooeyItems.map(function(item) { return { href: item.href, label: item.label }; }),
+    initialActiveIndex: 4,
+  });
+});
+</script>
 </body>
 </html>

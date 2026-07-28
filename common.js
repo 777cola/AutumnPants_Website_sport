@@ -50,6 +50,26 @@ function applyLang() {
       }
     }
   });
+  // Update GooeyNav labels on language change
+  if (window.gooeyNavItems) {
+    const navLis = document.querySelectorAll('.gooey-nav-container nav ul li');
+    window.gooeyNavItems.forEach((item, i) => {
+      if (i < navLis.length) {
+        const a = navLis[i].querySelector('a');
+        if (a) {
+          const text = NAV_I18N[lang]?.[item.key];
+          if (text) a.textContent = text;
+        }
+      }
+    });
+    // Update the floating text element to match active link
+    const activeLi = document.querySelector('.gooey-nav-container nav li.active');
+    const textEl = document.querySelector('.gooey-nav-container .effect.text');
+    if (textEl && activeLi) {
+      const activeA = activeLi.querySelector('a');
+      if (activeA) textEl.textContent = activeA.textContent;
+    }
+  }
   // Update lang toggle active state
   document.querySelectorAll('.lang-item').forEach(item => {
     item.classList.toggle('active', item.dataset.lang === lang);
