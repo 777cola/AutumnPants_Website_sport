@@ -1,93 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-i18n-title="page.title">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>运动 — 戚俊皓</title>
-<meta name="description" content="运动记录 — 正在建设中">
-<meta property="og:title" content="运动 | 戚俊皓">
-<meta property="og:description" content="运动记录 — 还没做好，敬请期待">
+<meta name="description" data-i18n-meta="page.desc" content="运动记录 — 正在建设中">
+<meta property="og:title" data-i18n-meta="page.ogtitle" content="运动 | 戚俊皓">
+<meta property="og:description" data-i18n-meta="page.ogdesc" content="运动记录 — 还没做好，敬请期待">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏃</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-:root {
-  --bg: #ffffff;
-  --text: #1a2332;
-  --text-secondary: #5a6a7e;
-  --text-muted: #8a9baa;
-  --accent: #8B5CF6;
-  --accent-light: #A78BFA;
-  --border: #e2e8f0;
-  --radius: 16px;
-  --font-sans: 'Instrument Sans', -apple-system, sans-serif;
-  --font-cn: 'Noto Sans SC', -apple-system, 'PingFang SC', sans-serif;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: var(--font-cn);
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  -webkit-font-smoothing: antialiased;
-}
-.container {
-  text-align: center;
-  padding: 2rem;
-}
-.icon {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-h1 {
-  font-family: var(--font-sans);
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
-}
-.status {
-  display: inline-block;
-  padding: 0.35rem 1.2rem;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  background: rgba(139,92,246,0.08);
-  color: var(--accent);
-  border: 1px solid rgba(139,92,246,0.15);
-  margin-bottom: 1.5rem;
-}
-p {
-  color: var(--text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  max-width: 400px;
-  margin: 0 auto 2rem;
-}
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: opacity 0.2s;
-}
-.back-link:hover { opacity: 0.7; }
-.back-link::before {
-  content: '←';
-  font-size: 1.1rem;
-}
-</style>
 </head>
 <body>
 
@@ -102,45 +27,74 @@ p {
   </defs>
 </svg>
 
-<div class="nav-gooey-wrapper">
-  <a href="https://qijunhao.com" class="nav-gooey-logo">Qi JunHao<span class="dot">.</span></a>
-  <div class="gooey-nav-container" id="gooeyNav"></div>
-  <div class="nav-gooey-right">
-    <div class="lang-toggle" id="langToggle">
-      <span class="lang-item active" data-lang="zh">简</span>
-      <span class="lang-item" data-lang="en">EN</span>
-      <span class="lang-item" data-lang="hant">繁</span>
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Qi JunHao<span class="dot">.</span></a>
+    <div class="nav-gooey" id="navGooey"></div>
+    <div class="nav-right">
+      <div class="lang-toggle" id="langToggle">
+        <span class="lang-item active" data-lang="zh" data-full="简体中文">简</span>
+        <span class="lang-item" data-lang="en" data-full="English">EN</span>
+        <span class="lang-item" data-lang="hant" data-full="繁體中文">繁</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
     </div>
-    <button class="theme-toggle" id="themeToggle" aria-label="切换主题"></button>
   </div>
-</div>
+</nav>
 
 <div class="container">
   <span class="icon">⚽</span>
-  <h1>运动</h1>
-  <span class="status">还没做好</span>
-  <p>这个页面还在施工中<br>运动记录会放在这里</p>
-  <a href="https://qijunhao.com" class="back-link">回到首页</a>
+  <h1 data-i18n="page.h1">运动</h1>
+  <span class="status" data-i18n="coming.status">还没做好</span>
+  <p data-i18n="coming.desc">这个页面还在施工中<br>运动记录会放在这里</p>
+  <a href="https://qijunhao.com" class="back-link" data-i18n="coming.back">回到首页</a>
 </div>
 
+<script>
+window.PAGE_I18N = {
+  zh: {
+    'page.title':'运动 — 戚俊皓','page.desc':'运动记录 — 正在建设中',
+    'page.ogtitle':'运动 | 戚俊皓','page.ogdesc':'运动记录 — 还没做好，敬请期待',
+    'page.h1':'运动',
+    'coming.status':'还没做好','coming.desc':'这个页面还在施工中<br>运动记录会放在这里','coming.back':'回到首页',
+  },
+  en: {
+    'page.title':'Sport — Qi JunHao','page.desc':'Sports — Under Construction',
+    'page.ogtitle':'Sport | Qi JunHao','page.ogdesc':'Sports — Coming Soon',
+    'page.h1':'Sport',
+    'coming.status':'Coming Soon','coming.desc':'This page is under construction<br>Sports content will be here soon','coming.back':'Back to Home',
+  },
+  hant: {
+    'page.title':'運動 — 戚俊皓','page.desc':'運動記錄 — 正在建設中',
+    'page.ogtitle':'運動 | 戚俊皓','page.ogdesc':'運動記錄 — 還沒做好，敬請期待',
+    'page.h1':'運動',
+    'coming.status':'還沒做好','coming.desc':'這個頁面還在施工中<br>運動記錄會放在這裡','coming.back':'回到首頁',
+  }
+};
+</script>
 <script src="common.js"></script>
 <script src="gooey-nav.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var gooeyItems = [
-    { href: 'https://qijunhao.com', key: 'nav.home', label: '首页' },
-    { href: 'https://music.qijunhao.com', key: 'nav.music', label: '音乐' },
-    { href: 'https://travel.qijunhao.com', key: 'nav.travel', label: '旅行' },
-    { href: 'https://photography.qijunhao.com', key: 'nav.photo', label: '摄影' },
-    { href: 'https://sport.qijunhao.com', key: 'nav.sports', label: '运动' },
-    { href: 'https://resume.qijunhao.com', key: 'nav.resume', label: '履历' },
-    { href: 'https://contact.qijunhao.com', key: 'nav.contact', label: '联系' },
-  ];
-  window.gooeyNavItems = gooeyItems;
-  window.gooeyNavInstance = GooeyNav(document.getElementById('gooeyNav'), {
-    items: gooeyItems.map(function(item) { return { href: item.href, label: item.label }; }),
-    initialActiveIndex: 4,
-  });
+  var gooeyContainer = document.getElementById('navGooey');
+  if (gooeyContainer && typeof window.GooeyNav === 'function') {
+    window.GooeyNav(gooeyContainer, {
+      items: [
+        { label: '首页', href: 'https://qijunhao.com' },
+        { label: '音乐', href: 'https://music.qijunhao.com' },
+        { label: '旅行', href: 'https://travel.qijunhao.com' },
+        { label: '摄影', href: 'https://photography.qijunhao.com' },
+        { label: '运动', href: 'https://sport.qijunhao.com' },
+        { label: '履历', href: 'https://resume.qijunhao.com' },
+        { label: '联系', href: 'https://contact.qijunhao.com' },
+      ],
+      animationTime: 600,
+      particleCount: 12,
+    });
+  }
 });
 </script>
 </body>
