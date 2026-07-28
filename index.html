@@ -31,10 +31,12 @@
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="/" class="nav-logo">Qi JunHao<span class="dot">.</span></a>
+
     <div class="nav-gooey" id="navGooey"></div>
+
     <div class="nav-right">
       <div class="lang-toggle" id="langToggle">
-        <span class="lang-item active" data-lang="zh" data-full="简体中文">简</span>
+        <span class="lang-item" data-lang="zh" data-full="简体中文">简</span>
         <span class="lang-item" data-lang="en" data-full="English">EN</span>
         <span class="lang-item" data-lang="hant" data-full="繁體中文">繁</span>
       </div>
@@ -76,11 +78,14 @@ window.PAGE_I18N = {
 };
 </script>
 <script src="common.js"></script>
+
+
 <script src="gooey-nav.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var gooeyContainer = document.getElementById('navGooey');
   if (gooeyContainer && typeof window.GooeyNav === 'function') {
+    var lang = localStorage.getItem('lang') || 'zh';
     window.GooeyNav(gooeyContainer, {
       items: [
         { label: '首页', href: 'https://qijunhao.com' },
