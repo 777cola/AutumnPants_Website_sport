@@ -80,11 +80,6 @@ window.PAGE_I18N = {
 <script src="common.js"></script>
 
 
-<script src="gooey-nav.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var gooeyContainer = document.getElementById('navGooey');
-  if (gooeyContainer && typeof window.GooeyNav === 'function') {
     var lang = localStorage.getItem('lang') || 'zh';
     window.GooeyNav(gooeyContainer, {
       items: [
@@ -102,5 +97,47 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
+<script src="gooey-nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var gooeyContainer = document.getElementById('navGooey');
+  if (gooeyContainer && typeof window.GooeyNav === 'function') {
+    window.GooeyNav(gooeyContainer, {
+      items: [
+        { label: '首页', href: 'https://qijunhao.com' },
+        { label: '音乐', href: 'https://music.qijunhao.com' },
+        { label: '旅行', href: 'https://travel.qijunhao.com' },
+        { label: '摄影', href: 'https://photography.qijunhao.com' },
+        { label: '运动', href: 'https://sport.qijunhao.com' },
+        { label: '履历', href: 'https://resume.qijunhao.com' },
+        { label: '联系', href: 'https://contact.qijunhao.com' },
+      ],
+      animationTime: 600,
+      particleCount: 12,
+    });
+  }
+});
+</script>
+    <script src="common.js"></script>
+  <script src="gooey-nav.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var gooeyContainer = document.getElementById('navGooey');
+    if (gooeyContainer && typeof window.GooeyNav === 'function') {
+      window.GooeyNav(gooeyContainer, {
+        items: [
+          { label: '首页', href: 'https://qijunhao.com' },
+          { label: '音乐', href: 'https://music.qijunhao.com' },
+          { label: '旅行', href: 'https://travel.qijunhao.com' },
+          { label: '摄影', href: 'https://photography.qijunhao.com' },
+          { label: '运动', href: 'https://sport.qijunhao.com' },
+          { label: '履历', href: 'https://resume.qijunhao.com' },
+          { label: '联系', href: 'https://contact.qijunhao.com' },
+        ],
+        animationTime: 600,
+        particleCount: 12,
+      });
+    }
+  });
+  </script>
 </body>
-</html>
