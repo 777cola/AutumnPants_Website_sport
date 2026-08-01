@@ -83,7 +83,7 @@ window.PAGE_I18N = {
   document.addEventListener('DOMContentLoaded', function () {
     var gooeyContainer = document.getElementById('navGooey');
     if (gooeyContainer && typeof window.GooeyNav === 'function') {
-      var lang = localStorage.getItem('lang') || 'zh';
+      var lang = Prefs.get('lang') || 'zh';
       window.GooeyNav(gooeyContainer, {
         items: [
           { label: '首页', href: 'https://qijunhao.com' },
