@@ -1,0 +1,9 @@
+/* ============================================================
+   自托管字体 — 由 localize_fonts.py 生成，请勿手改
+   来源：Google Fonts（Instrument Sans / Noto Sans SC / JetBrains Mono）
+   已按全站实际用到的 1400 个字符裁剪成单文件；如新增文案里出现
+   子集外的生僻字，会回退到系统字体，重跑脚本即可补全。
+   ============================================================ */
+@font-face{font-family:'Noto Sans SC';font-style:normal;font-weight:100 900;font-display:swap;src:url(notosanssc.woff2) format('woff2');}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:100 900;font-display:swap;src:url(instrumentsans.woff2) format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:swap;src:url(jetbrainsmono.woff2) format('woff2');}

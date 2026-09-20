@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-i18n-title="page.title">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运动 · 页面不存在 — 戚俊皓</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏃</text></svg>">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/style.css">
+<style>
+  html, body { min-height: 100%; }
+  body { background: var(--bg); color: var(--text); }
+  .nf-wrap {
+    min-height: 100dvh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 7rem 1.5rem 4rem; gap: .25rem;
+  }
+  .nf-code {
+    font-family: var(--font-display, 'Instrument Sans', sans-serif);
+    font-size: clamp(5rem, 18vw, 11rem); font-weight: 700; line-height: 1;
+    letter-spacing: -0.05em; color: #8B5CF6; opacity: .16; margin: 0;
+  }
+  .nf-title { font-size: clamp(1.35rem, 4vw, 1.9rem); font-weight: 600; margin-top: -1rem; }
+  .nf-desc { color: var(--text-secondary); font-size: 1rem; line-height: 1.9; max-width: 34rem; margin-top: .9rem; }
+  .nf-actions { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; margin-top: 2.25rem; }
+  .nf-btn {
+    display: inline-flex; align-items: center; gap: .4rem;
+    padding: .7rem 1.5rem; border-radius: 999px; font-size: .92rem; font-weight: 500;
+    text-decoration: none; transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .nf-btn.primary { background: #8B5CF6; color: #fff; border: 1px solid #8B5CF6; }
+  .nf-btn.primary:hover { transform: translateY(-2px); }
+  .nf-btn.ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+  .nf-btn.ghost:hover { border-color: #8B5CF6; color: #8B5CF6; }
+  @media (prefers-reduced-motion: reduce) { .nf-btn, .nf-btn.primary:hover { transition: none; transform: none; } }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="https://qijunhao.com" class="nav-logo">Qi JunHao<span class="dot">.</span></a>
+    <div class="nav-gooey" id="navGooey"></div>
+    <div class="nav-right">
+      <div class="lang-toggle" id="langToggle">
+        <span class="lang-item" data-lang="zh" data-full="简体中文">简</span>
+        <span class="lang-item" data-lang="en" data-full="English">EN</span>
+        <span class="lang-item" data-lang="hant" data-full="繁體中文">繁</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="nf-wrap">
+  <p class="nf-code" aria-hidden="true">404</p>
+  <h1 class="nf-title" data-i18n="nf.title">这一页不在档案里</h1>
+  <p class="nf-desc" data-i18n="nf.desc">你要找的页面可能已经被移动、改名，或者从来没存在过。可以从下面的入口回到站点。</p>
+  <div class="nf-actions">
+    <a class="nf-btn primary" href="https://qijunhao.com" data-i18n="nf.home">返回首页</a>
+    <a class="nf-btn ghost" href="https://qijunhao.com" data-i18n="nf.contact">联系我</a>
+  </div>
+</main>
+
+<script>
+window.PAGE_I18N = {
+  zh: {
+    'page.title':'运动 · 页面不存在 — 戚俊皓',
+    'nf.title':'这一页不在档案里',
+    'nf.desc':'你要找的页面可能已经被移动、改名，或者从来没存在过。可以从下面的入口回到站点。',
+    'nf.home':'返回首页',
+    'nf.contact':'联系我',
+  },
+  en: {
+    'page.title':'Sport · Page Not Found — Qi JunHao',
+    'nf.title':'This page is not in the archive',
+    'nf.desc':'The page you asked for may have been moved, renamed, or never existed. Use the links below to get back.',
+    'nf.home':'Back to Home',
+    'nf.contact':'Contact me',
+  },
+  hant: {
+    'page.title':'運動 · 頁面不存在 — 戚俊皓',
+    'nf.title':'這一頁不在檔案裡',
+    'nf.desc':'你要找的頁面可能已經被移動、改名，或者從來沒存在過。可以從下面的入口回到站點。',
+    'nf.home':'返回首頁',
+    'nf.contact':'聯繫我',
+  }
+};
+</script>
+<script src="/common.js"></script>
+<script src="/gooey-nav.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var gooeyContainer = document.getElementById('navGooey');
+  if (gooeyContainer && typeof window.GooeyNav === 'function') {
+    window.GooeyNav(gooeyContainer, {
+      items: [
+        { label: '首页', href: 'https://qijunhao.com' },
+        { label: '音乐', href: 'https://music.qijunhao.com' },
+        { label: '旅行', href: 'https://travel.qijunhao.com' },
+        { label: '摄影', href: 'https://photography.qijunhao.com' },
+        { label: '运动', href: 'https://sport.qijunhao.com' },
+        { label: '履历', href: 'https://resume.qijunhao.com' },
+        { label: '联系', href: 'https://contact.qijunhao.com' },
+      ],
+      animationTime: 600,
+      particleCount: 12,
+      initialActiveIndex: 4,
+    });
+  }
+});
+</script>
+</body>
+</html>
